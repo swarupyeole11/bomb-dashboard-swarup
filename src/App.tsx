@@ -80,7 +80,7 @@ const App: React.FC = () => {
               <Dashboard/>
             </Route>
 
-            
+
             {/* <Route path="/sbs">
               <SBS />
             </Route> */}
@@ -90,6 +90,7 @@ const App: React.FC = () => {
             {/* <Route path="/liquidity">
               <Liquidity />
             </Route> */}
+            
             <Route path="*">
               <NoMatch />
             </Route>
