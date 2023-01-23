@@ -18,6 +18,8 @@ import Popups from './components/Popups';
 import useChainId from './hooks/useChainId';
 //import Regulations from './views/Regulations/Regulations';
 import {RefreshContextProvider} from './contexts/RefreshContext';
+import Dashboard from './views/Dashboard/Dashboard';
+
 
 const Home = lazy(() => import('./views/Home'));
 const Farm = lazy(() => import('./views/Farm'));
@@ -25,6 +27,12 @@ const Boardroom = lazy(() => import('./views/Boardroom'));
 const Bond = lazy(() => import('./views/Bond'));
 const Xbomb = lazy(() => import('./views/Stake'));
 const Supply = lazy(() => import('./views/Supply'));
+
+
+/*Adding My Code */
+
+
+/** */
 // const SBS = lazy(() => import('./views/Sbs'));
 // const Liquidity = lazy(() => import('./views/Liquidity'));
 
@@ -67,6 +75,12 @@ const App: React.FC = () => {
             <Route path="/supply">
               <Supply />
             </Route>
+
+            <Route path="/dashboard">
+              <Dashboard/>
+            </Route>
+
+            
             {/* <Route path="/sbs">
               <SBS />
             </Route> */}
