@@ -19,6 +19,8 @@ import useChainId from './hooks/useChainId';
 //import Regulations from './views/Regulations/Regulations';
 import {RefreshContextProvider} from './contexts/RefreshContext';
 import Dashboard from './views/Dashboard/Dashboard';
+import './index.css';
+
 
 
 const Home = lazy(() => import('./views/Home'));
@@ -132,7 +134,7 @@ const Providers: React.FC = ({children}) => {
                   <BanksProvider>
                     <>
                       <Popups />
-                      {children}
+                      {children} {/* since provider component wraped around the <App/> component do the app component becomes a child of the component so now to refer to that app componet we provide {children} and it is customary*/}
                     </>
                   </BanksProvider>
                 </ModalsProvider>

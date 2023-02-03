@@ -52,7 +52,7 @@ const logosBySymbol: {[title: string]: string} = {
 };
 
 type LogoProps = {
-  symbol: string;
+  symbol: any;
   size?: number;
 };
 

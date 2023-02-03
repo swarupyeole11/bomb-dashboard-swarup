@@ -120,7 +120,7 @@ const Nav = () => {
             <Typography variant="h6" color="inherit" noWrap style={{flexGrow: '0'}} className={classes.toolbarTitle}>
               {/* <a className={ classes.brandLink } href="/">Bomb Money</a> */}
               <Link to="/" color="inherit" className={classes.brandLink}>
-                <img alt="bomb.money" src={bombLogo} height="60px" />
+                {/* <img alt="bomb.money" src={bombLogo} height="1px" /> */}
               </Link>
             </Typography>
             <Box style={{paddingLeft: '15px', fontSize: '1rem', flexGrow: '1'}}>

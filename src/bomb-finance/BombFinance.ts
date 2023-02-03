@@ -648,7 +648,7 @@ export class BombFinance {
         return await pool.pendingShare(poolId, account);
       }
     } catch (err) {
-      console.error(`Failed to call pendingShare() on pool ${pool.address}: ${err.stack}`);
+      console.error(`Failed to call pendingShare() on pool ${pool.address}: ${err}`);
       return BigNumber.from(0);
     }
   }
@@ -659,7 +659,7 @@ export class BombFinance {
       let userInfo = await pool.userInfo(poolId, account);
       return await userInfo.amount;
     } catch (err) {
-      console.error(`Failed to call userInfo() on pool ${pool.address}: ${err.stack}`);
+      console.error(`Failed to call userInfo() on pool ${pool.address}: ${err}`);
       return BigNumber.from(0);
     }
   }

@@ -4,6 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 import CountUp from 'react-countup';
 import CardIcon from '../../components/CardIcon';
 import TokenSymbol from '../../components/TokenSymbol';
+import BombInfo from '../../components/BombInfo';
 import useBombStats from '../../hooks/useBombStats';
 import useLpStats from '../../hooks/useLpStats';
 import useLpStatsBTC from '../../hooks/useLpStatsBTC';
@@ -26,7 +27,8 @@ import useBombFinance from '../../hooks/useBombFinance';
 //import { ReactComponent as IconTelegram } from '../../assets/img/telegram.svg';
 import { Helmet } from 'react-helmet';
 import BombImage from '../../assets/img/bomb.png';
-
+import BshareImage from '../../assets/img/bshares.png';
+import BbondImage from '../../assets/img/bbond.png';
 //import useBombMaxiStats from '../../hooks/useBombMaxiStats';
 
 import HomeImage from '../../assets/img/background.jpg';
@@ -174,112 +176,100 @@ const Home = () => {
 
   return (
     <Page>
+
+
+
       <Helmet>
         <title>{TITLE}</title>
       </Helmet>
       <BackgroundImage />
+
+      <div className='bg-[#20254380] text-center text-white font-[400] text-[22px]'>
+        Bomb Finance Summary
+        <hr className='border-[#C3C5CBBF]' />
+      </div>
+
+      {/*Bomb Finance Summary Component */}
+      <div className='grid grid-cols-2 bg-[#20254380]  '>
+        {/* First Half Of the grid */}
+        <div className='flex flex-col '>
+
+          <div className='flex text-white text-sm mt-6 mx-36 justify-between'>
+            <h6 >Current Supply</h6>
+            <h6 >Total Supply</h6>
+            <h6 >Price</h6>
+          </div>
+
+          <hr className='border-[#C3C5CBBF]' />
+
+
+          <BombInfo imageUrl={BombImage} token="BTC" investmentAsset="$BOMB" currentSupply={roundAndFormatNumber(bombCirculatingSupply, 2)} totalSupply={roundAndFormatNumber(bombTotalSupply, 2)} price={bombPriceInDollars} priceBTCB={bombPriceInBNB} />
+          <hr className='border-[#C3C5CBBF]' />
+
+          <BombInfo imageUrl={BshareImage} token="BNB" investmentAsset="$BSHARE" currentSupply={roundAndFormatNumber(bShareCirculatingSupply, 2)} totalSupply={bShareTotalSupply} price={bSharePriceInDollars} priceBTCB={bSharePriceInBNB} />
+          <hr className='border-[#C3C5CBBF]' />
+
+          <BombInfo imageUrl={BbondImage} token="BTC" investmentAsset="$BBOND" currentSupply={roundAndFormatNumber(tBondCirculatingSupply, 2)} totalSupply={roundAndFormatNumber(tBondTotalSupply, 2)} price={tBondPriceInDollars} priceBTCB={tBondPriceInBNB} />
+          <hr className='border-[#C3C5CBBF]' />
+        </div>
+
+        <div className='justify-self-end p-3 '>
+
+          <div className='flex flex-col items-center text-white text-lg'>
+            <h6>Current Epoch</h6>
+            <h6 className='text-4xl'>258</h6>
+          </div>
+
+          <hr className='border-[#C3C5CBBF] ' />
+
+          <div className='flex flex-col items-center text-white text-lg'>
+            <h6 className='text-4xl'>03:38:36</h6>
+            <h6>Next Epoch in</h6>
+          </div>
+
+          <hr className='border-[#C3C5CBBF]' />
+
+          <div className='flex flex-col items-center text-gray-400 font-light  '>
+            <h6>Live Twap : <span className='text-[#00E8A2]'>1.17</span></h6>
+            <h6>TVL : <span className='text-[#00E8A2]'>${TVL}</span></h6>
+            <h6>Last Epoch TWAP : <span className='text-[#00E8A2]'>1.22</span></h6>
+
+          </div>
+
+        </div>
+      </div>
+       
+       {/*Second Half Of The Grid */}
+        <div className='flex flex-row'>
+
+        <div className='grid grid-cols-2'>
+          <div>1</div>
+          <div>2</div>  
+          <div>2</div>
+          <div>1</div>
+          <div>2</div>
+          <div>1</div>
+        </div>
+
+         <div>
+            hello
+         </div>
+
+        </div>
+       
+
+
+
+
+
       <Grid container spacing={3}>
-        {/* Logo */}
-        <Grid
-          item
-          xs={12}
-          sm={4}
-          style={{ display: 'flex', justifyContent: 'center', verticalAlign: 'middle', overflow: 'hidden' }}
-        >
-          <img src={BombImage} alt="Bomb.money" style={{ maxHeight: '240px' }} />
-        </Grid>
+        
         {/* Explanation text */}
-        <Grid item xs={12} sm={8}>
-          <Paper>
-            <Box p={4} style={{ textAlign: 'center' }}>
-              <h1>BOMB: BITCOIN SAFETY + DEFI YIELDS</h1>
-              <p>
-                <strong>BOMB is pegged via algorithm to a 10,000:1 ratio to BTC. $100k BTC = $10 BOMB PEG</strong>
-              </p>
-              <p>
-                <h2>Best Algocoin | 0.5%+ DAILY | Audited | Doxxed team</h2>
-                {/* Stake your BOMB-BTC LP in the Farm to earn BSHARE rewards. Then stake your earned BSHARE in the
-                Boardroom to earn more BOMB! */}
-              </p>
-              <p>
-                {/* <IconTelegram alt="telegram" style={{ fill: '#dddfee', height: '15px' }} /> */}
-                Join our{' '}
-                <a
-                  href="https://t.me/bombmoneybsc"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  style={{ color: '#dddfee' }}
-                >
-                  Telegram
-                </a>{' '}
-                or{' '}
-                <a
-                  href="https://discord.bomb.money"
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  style={{ color: '#dddfee' }}
-                >
-                  Discord
-                </a>{' '}
-                to find out more!
-              </p>
-
-              <button onClick={openModal} className="shinyButtonSecondary">
-                Learn about BOMB
-                {modal ? (
-                  <section className="modal__bg">
-                    <div className="modal__align">
-                      <div className="modal__content" modal={modal}>
-                        <IoCloseOutline className="modal__close" arial-label="Close modal" onClick={setModal} />
-                        <div className="modal__video-align">
-                          {videoLoading ? (
-                            <div className="modal__spinner">
-                              {' '}
-                              <BiLoaderAlt className="modal__spinner-style" fadeIn="none" />
-                            </div>
-                          ) : null}
-                          <iframe
-                            className="modal__video-style"
-                            onLoad={spinner}
-                            loading="lazy"
-                            width="800"
-                            height="500"
-                            src="https://www.youtube.com/embed/nhCWmmRNNhc"
-                            title="BOMB Intro Video"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullscreen
-                          ></iframe>
-                        </div>
-                      </div>
-                    </div>
-                  </section>
-                ) : null}
-              </button>
-            </Box>
-          </Paper>
-        </Grid>
-
-        <Grid container spacing={3}>
-          <Grid item xs={12} sm={12} justify="center" style={{ margin: '12px', display: 'flex' }}>
-            <Alert variant="filled" severity="info">
-              <h2>BOMB Cycle: Guide to Indefinite Printing</h2>
-              <b>How to maximize earnings while keeping BOMB printing!</b>{' '}
-              <Button
-                href="https://bombbshare.medium.com/the-bomb-cycle-how-to-print-forever-e89dc82c12e5"
-                target={'_blank'}
-                className="shinyButton"
-                style={{ margin: '10px' }}
-              >
-                READ ARTICLE
-              </Button>
-            </Alert>
-          </Grid>
-        </Grid>
-
+    
+     
         {/* TVL */}
         <Grid item xs={12} sm={4}>
-          <Card style={{'paddingTop': '10px'}}>
+          <Card style={{ 'paddingTop': '10px' }}>
             <CardContent align="center">
               <h2>Total Value Locked</h2>
               <CountUp style={{ fontSize: '25px' }} end={TVL} separator="," prefix="$" />

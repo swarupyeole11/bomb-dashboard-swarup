@@ -42,9 +42,7 @@ body {
 h1,
 h2,
 h3,
-h4,
-h5,
-h6 {
+h4{
   font-family: 'Rubik', cursive !important;
   text-transform: uppercase;
   color: #f9d749;
@@ -358,3 +356,4 @@ code {
     height: auto;
   }
 }
+
