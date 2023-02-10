@@ -5,6 +5,7 @@ import CountUp from 'react-countup';
 import CardIcon from '../../components/CardIcon';
 import TokenSymbol from '../../components/TokenSymbol';
 import BombInfo from '../../components/BombInfo';
+import DashBoardButton from '../../components/DashBoardButton';
 import useBombStats from '../../hooks/useBombStats';
 import useLpStats from '../../hooks/useLpStats';
 import useLpStatsBTC from '../../hooks/useLpStatsBTC';
@@ -29,6 +30,8 @@ import { Helmet } from 'react-helmet';
 import BombImage from '../../assets/img/bomb.png';
 import BshareImage from '../../assets/img/bshares.png';
 import BbondImage from '../../assets/img/bbond.png';
+import DocumentImage from '../../assets/img/documentImage.png'
+import DiscordLogo from '../../assets/img/discordLogo.png'
 //import useBombMaxiStats from '../../hooks/useBombMaxiStats';
 
 import HomeImage from '../../assets/img/background.jpg';
@@ -189,9 +192,9 @@ const Home = () => {
         <hr className='border-[#C3C5CBBF]' />
       </div>
 
-      {/*Bomb Finance Summary Component */}
+      {/*Component 1 : Bomb Finance Summary Component */}
       <div className='grid grid-cols-2 bg-[#20254380]  '>
-        {/* First Half Of the grid */}
+        {/*cloumn 1 of the Bomb Finance Summary gird */}
         <div className='flex flex-col '>
 
           <div className='flex text-white text-sm mt-6 mx-36 justify-between'>
@@ -212,7 +215,8 @@ const Home = () => {
           <BombInfo imageUrl={BbondImage} token="BTC" investmentAsset="$BBOND" currentSupply={roundAndFormatNumber(tBondCirculatingSupply, 2)} totalSupply={roundAndFormatNumber(tBondTotalSupply, 2)} price={tBondPriceInDollars} priceBTCB={tBondPriceInBNB} />
           <hr className='border-[#C3C5CBBF]' />
         </div>
-
+        
+        {/*cloumn 2 of the Bomb Finance Summary gird */}
         <div className='justify-self-end p-3 '>
 
           <div className='flex flex-col items-center text-white text-lg'>
@@ -238,35 +242,61 @@ const Home = () => {
 
         </div>
       </div>
-       
-       {/*Second Half Of The Grid */}
-        <div className='flex flex-row'>
 
-        <div className='grid grid-cols-2'>
-          <div>1</div>
-          <div>2</div>  
-          <div>2</div>
-          <div>1</div>
-          <div>2</div>
-          <div>1</div>
+
+      {/*Component 2: Read Investment Startegy component */}
+      {/* the logic is that divided the grid into two parts and and then made one part antoher grid */}
+
+      <div className='grid grid-cols-3 my-5 gap-6  text-white '>
+
+        {/* 2/3 part of the grid */}
+        <div className='col-span-2 grid grid-cols-2 gap-2'>
+          
+          <a className='col-span-2 place-self-end mr-4 '>Read Investment Strategy {'>'} </a>
+
+          {/* Investment Now  Button */}
+          <a href={buyBombAddress} className=' text-center bg-[#00ADE8] col-span-2 rounded-md font-extrabold text-2xl p-2'>Invest Now</a>
+          
+          {/*Chat on Discord Button*/}
+          <a className='mt-1 text-center p-2 justify-center items-center flex bg-[#FFFFFF] rounded-md bg-opacity-50	text-black font-semibold' href="https://docs.bomb.money/">
+            <img src={DiscordLogo} alt="documentImage" />
+            <h6 className='ml-2'> Chat On Discord</h6>
+          </a>
+
+          {/*Reas Docs Button */}
+          <a className='mt-1 text-center p-2 justify-center items-center flex bg-[#FFFFFF] rounded-md bg-opacity-50	text-black font-semibold' href="https://docs.bomb.money/">
+            <img src={DocumentImage} alt="documentImage" />
+            <h6 className='ml-2'> Read Docs</h6>
+          </a>
+
+          <div className='col-span-2 bg-[#23284B] bg-opacity-75 '>
+              <div className=''>Hello</div>
+              <hr className='border-[#C3C5CB] bg-opacity-50 mx-6' />
+              <h6 className='flex justify-end mr-6'>Total Staked : <span><img  className='h-[20px] w-[20px]' src={BshareImage} /></span> 7232</h6>
+              <DashBoardButton text="Deposit"/>
+          </div>
+
         </div>
 
-         <div>
-            hello
-         </div>
-
+        {/*1/3 part of the grid */}
+        <div className='bg-[#23284B] bg-opacity-75 font-extrabold rounded-md p-2'>
+          Latest News
         </div>
-       
+
+      </div>
+
+
+
 
 
 
 
 
       <Grid container spacing={3}>
-        
+
         {/* Explanation text */}
-    
-     
+
+
         {/* TVL */}
         <Grid item xs={12} sm={4}>
           <Card style={{ 'paddingTop': '10px' }}>

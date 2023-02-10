@@ -6,7 +6,7 @@ export type Configuration = {
   networkName: string;
   ftmscanUrl: string;
   defaultProvider: string;
-  deployments: Deployments;
+  deployments: Deployments;//this is a key value pair where the main key is deploymnets the subkeys are [address,abi]
   externalTokens: {[contractName: string]: [string, number]};
   config?: EthereumConfig;
 

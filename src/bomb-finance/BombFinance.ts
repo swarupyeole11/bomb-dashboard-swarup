@@ -31,8 +31,8 @@ export class BombFinance {
   externalTokens: { [name: string]: ERC20 };
   boardroomVersionOfUser?: string;
 
-  BOMBBTCB_LP: Contract;
-  BOMB: ERC20;
+  BOMBBTCB_LP: Contract;/**The Contract is hinting that this is a smart contract instance */
+  BOMB: ERC20;/* the erc20 type hints at that it is a ERC20 token */
   BUSD: ERC20;
   BSHARE: ERC20;
   BBOND: ERC20;
@@ -59,10 +59,14 @@ export class BombFinance {
     for (const [name, deployment] of Object.entries(deployments)) {
       this.contracts[name] = new Contract(deployment.address, deployment.abi, provider);
     }
+
+    //loads the external tokens
     this.externalTokens = {};
     for (const [symbol, [address, decimal]] of Object.entries(externalTokens)) {
       this.externalTokens[symbol] = new ERC20(address, provider, symbol, decimal);
     }
+    
+    //loads the internal tokens of the system
     this.BOMB = new ERC20(deployments.Bomb.address, provider, 'BOMB');
     this.BSHARE = new ERC20(deployments.BShare.address, provider, 'BSHARE');
     this.BBOND = new ERC20(deployments.BBond.address, provider, 'BBOND');
@@ -89,7 +93,7 @@ export class BombFinance {
     this.BSHARE_MAXI = new ERC20(deployments.BshareMaxiLPBShareRewardPool.address, provider, '80BSHARE-20WBNB-LP');
 
     // Uniswap V2 Pair
-
+    
     this.BOMBBTCB_LP = new Contract(externalTokens['BOMB-BTCB-LP'][0], IUniswapV2PairABI, provider);
     this.BUSMBUSD_LP = new Contract(externalTokens['BUSM-BUSD-LP'][0], IUniswapV2PairABI, provider);
 
@@ -555,7 +559,7 @@ export class BombFinance {
 
     return await Treasury.redeemBonds(decimalToBalance(amount), priceForBomb);
   }
-
+  //Todo : I am maeking this code as it is then been used in the dashboard
   async getTotalValueLocked(): Promise<Number> {
     let totalValue = 0;
     for (const bankInfo of Object.values(bankDefinitions)) {
@@ -1039,7 +1043,9 @@ export class BombFinance {
     const xBombRate = xBombPerBomb.toString();
     return parseUnits(xBombRate, 18);
   }
+  
 
+  //This is the functionality of withdraw I think 
   async withdrawFromBomb(amount: string): Promise<TransactionResponse> {
     const Xbomb = this.contracts.xBOMB;
     return await Xbomb.leave(decimalToBalance(amount));
