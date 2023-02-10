@@ -32,6 +32,8 @@ import BshareImage from '../../assets/img/bshares.png';
 import BbondImage from '../../assets/img/bbond.png';
 import DocumentImage from '../../assets/img/documentImage.png'
 import DiscordLogo from '../../assets/img/discordLogo.png'
+import UpArrowImage from '../../assets/img/arrowUpCircle.png'
+import DownArrowImage from '../../assets/img/arrowDownCircle.png'
 //import useBombMaxiStats from '../../hooks/useBombMaxiStats';
 
 import HomeImage from '../../assets/img/background.jpg';
@@ -194,7 +196,7 @@ const Home = () => {
 
       {/*Component 1 : Bomb Finance Summary Component */}
       <div className='grid grid-cols-2 bg-[#20254380]  '>
-        {/*cloumn 1 of the Bomb Finance Summary gird */}
+        {/*cloumn 1 of the Bomb Finance Summary gird {Current Supply Total price component} */}
         <div className='flex flex-col '>
 
           <div className='flex text-white text-sm mt-6 mx-36 justify-between'>
@@ -216,7 +218,7 @@ const Home = () => {
           <hr className='border-[#C3C5CBBF]' />
         </div>
         
-        {/*cloumn 2 of the Bomb Finance Summary gird */}
+        {/*column 2 of the Bomb Finance Summary gird Current Expoch Component*/}
         <div className='justify-self-end p-3 '>
 
           <div className='flex flex-col items-center text-white text-lg'>
@@ -245,7 +247,7 @@ const Home = () => {
 
 
       {/*Component 2: Read Investment Startegy component */}
-      {/* the logic is that divided the grid into two parts and and then made one part antoher grid */}
+      {/* The logic is that divided the grid into two parts and and then made one part another grid */}
 
       <div className='grid grid-cols-3 my-5 gap-6  text-white '>
 
@@ -257,23 +259,24 @@ const Home = () => {
           {/* Investment Now  Button */}
           <a href={buyBombAddress} className=' text-center bg-[#00ADE8] col-span-2 rounded-md font-extrabold text-2xl p-2'>Invest Now</a>
           
-          {/*Chat on Discord Button*/}
+          {/*Chat on Discord tag */}
           <a className='mt-1 text-center p-2 justify-center items-center flex bg-[#FFFFFF] rounded-md bg-opacity-50	text-black font-semibold' href="https://docs.bomb.money/">
             <img src={DiscordLogo} alt="documentImage" />
             <h6 className='ml-2'> Chat On Discord</h6>
           </a>
 
-          {/*Reas Docs Button */}
+          {/*Reas Docs tag */}
           <a className='mt-1 text-center p-2 justify-center items-center flex bg-[#FFFFFF] rounded-md bg-opacity-50	text-black font-semibold' href="https://docs.bomb.money/">
             <img src={DocumentImage} alt="documentImage" />
             <h6 className='ml-2'> Read Docs</h6>
           </a>
-
+         
+          {/* BoardRoom Component */}
           <div className='col-span-2 bg-[#23284B] bg-opacity-75 '>
               <div className=''>Hello</div>
               <hr className='border-[#C3C5CB] bg-opacity-50 mx-6' />
               <h6 className='flex justify-end mr-6'>Total Staked : <span><img  className='h-[20px] w-[20px]' src={BshareImage} /></span> 7232</h6>
-              <DashBoardButton text="Deposit"/>
+              <DashBoardButton text="Deposit" imageUrl={UpArrowImage}/>
           </div>
 
         </div>
