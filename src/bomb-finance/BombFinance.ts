@@ -137,7 +137,7 @@ export class BombFinance {
   //===================================================================
 
   async getBombStat(): Promise<TokenStat> {
-    const { BombRewardPool, BombGenesisRewardPool } = this.contracts;
+    const { BombRewardPool, BombGenesisRewardPool } = this.contracts; /* Loaded the BombRewardPool and BombRewardGenesisPool Contract  */
     const supply = await this.BOMB.totalSupply();
     const bombRewardPoolSupply = await this.BOMB.balanceOf(BombGenesisRewardPool.address);
     const bombRewardPoolSupply2 = await this.BOMB.balanceOf(BombRewardPool.address);
