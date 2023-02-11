@@ -7,6 +7,7 @@ import DocumentImage from '../../../assets/img/documentImage.png'
 import DiscordLogo from '../../../assets/img/discordLogo.png'
 import UpArrowImage from '../../../assets/img/arrowUpCircle.png'
 import DownArrowImage from '../../../assets/img/arrowDownCircle.png'
+import BombBTCLpImage from '../../../assets/img/bomb-btc-lp-512.png'
 
 
 const Component2 = () => {
@@ -15,7 +16,7 @@ const Component2 = () => {
     //  'https://pancakeswap.finance/swap?inputCurrency=0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c&outputCurrency=' +
     'https://app.bogged.finance/bsc/swap?tokenIn=0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c&tokenOut=0x522348779DCb2911539e76A1042aA922F9C47Ee3';
   //https://pancakeswap.finance/swap?outputCurrency=0x531780FAcE85306877D7e1F05d713D1B50a37F7A';
-  
+
     return (
         <>
             {/*Component 2: Read Investment Startegy component */}

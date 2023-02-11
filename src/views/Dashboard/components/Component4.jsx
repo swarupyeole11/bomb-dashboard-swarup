@@ -7,7 +7,8 @@ import DocumentImage from '../../../assets/img/documentImage.png'
 import DiscordLogo from '../../../assets/img/discordLogo.png'
 import UpArrowImage from '../../../assets/img/arrowUpCircle.png'
 import DownArrowImage from '../../../assets/img/arrowDownCircle.png'
-import Component3 from './Component3';
+
+
 
 
 const Component4 = () => {
@@ -61,7 +62,7 @@ const Component4 = () => {
                                     Bomb is over peg
                                 </div>
 
-                                <div className=' place-self-center mx-2'><DashBoardButton text="Purchase" imageUrl={BombImage} /></div>
+                                <div className=' place-self-center mx-2'><DashBoardButton text="Purchase" imageUrl={BbondImage} /></div>
                             </div>
 
                             <hr className='border-[#C3C5CBBF]' />

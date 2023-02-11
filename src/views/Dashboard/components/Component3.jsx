@@ -7,6 +7,8 @@ import DocumentImage from '../../../assets/img/documentImage.png'
 import DiscordLogo from '../../../assets/img/discordLogo.png'
 import UpArrowImage from '../../../assets/img/arrowUpCircle.png'
 import DownArrowImage from '../../../assets/img/arrowDownCircle.png'
+import BombBTCLpImage from '../../../assets/img/bomb-btc-lp-512.png'
+import BshareBNBImage from '../../../assets/img/bshare-bnb-LP.png'
 
 const Component3 = () => {
   return (
@@ -26,10 +28,10 @@ const Component3 = () => {
 
 
        {/* BombBTCB Component */}
-       <div className='col-span-2   pr-10 pl-6 py-2 text-base'>
+       <div className='col-span-2  pr-10 pl-6 py-2 text-base'>
 
          <div className='flex'>
-           <img className='h-6 w-6' src={BshareImage} alt="Bomb Share" />
+           <img className='h-6 w-6' src={BombBTCLpImage} alt="Bomb Share" />
            <div className='mr-auto'>
              <h6 className='font-bold text-2xl'>BOMB-BTCB</h6>
            </div>
@@ -91,7 +93,7 @@ const Component3 = () => {
        <div className='col-span-2 pr-10 pl-6 py-2 text-base mt-4'>
 
          <div className='flex'>
-           <img className='h-6 w-6' src={BshareImage} alt="Bomb Share" />
+           <img className='h-6 w-6' src={BshareBNBImage} alt="Bomb Share" />
            <div className='mr-auto'>
              <h6 className='font-bold text-2xl'>Bshare-BNB</h6>
            </div>
@@ -128,7 +130,7 @@ const Component3 = () => {
              Earned :
              {/* The Image and Text */}
              <div className='flex '>
-               <img className='w-[20px] h-[20px]' src={BombImage} alt="" />
+               <img className='w-[20px] h-[20px]' src={BshareImage} alt="" />
                6.4413
              </div>
              ≈ $298.88
@@ -137,7 +139,7 @@ const Component3 = () => {
            <div className='flex justify-between '>
              <div className=' place-self-center mx-2'><DashBoardButton text="Deposit" imageUrl={UpArrowImage} /></div>
              <div className=' place-self-center mx-2'><DashBoardButton text="Withdraw" imageUrl={DownArrowImage} /></div>
-             <div className=' place-self-center mx-2'><DashBoardButton text="Claim Rewards" imageUrl={BombImage} /></div>
+             <div className=' place-self-center mx-2'><DashBoardButton text="Claim Rewards" imageUrl={BshareImage} /></div>
            </div>
 
          </div>

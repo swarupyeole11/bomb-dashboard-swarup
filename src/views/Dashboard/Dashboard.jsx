@@ -6,7 +6,6 @@ import CardIcon from '../../components/CardIcon';
 import TokenSymbol from '../../components/TokenSymbol';
 
 import Component3 from './components/Component3';
-import Test from './components/Test'
 
 import BombInfo from '../../components/BombInfo';
 import DashBoardButton from '../../components/DashBoardButton';
@@ -193,8 +192,6 @@ const Dashboard = () => {
         <title>{TITLE}</title>
       </Helmet>
       <BackgroundImage />
-
-      <Test />
 
       <div className='bg-[#20254380] text-center text-white font-[400] text-[22px]'>
         Bomb Finance Summary
