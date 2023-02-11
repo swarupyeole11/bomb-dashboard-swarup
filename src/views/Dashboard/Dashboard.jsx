@@ -35,8 +35,9 @@ import DiscordLogo from '../../assets/img/discordLogo.png'
 import UpArrowImage from '../../assets/img/arrowUpCircle.png'
 import DownArrowImage from '../../assets/img/arrowDownCircle.png'
 //import useBombMaxiStats from '../../hooks/useBombMaxiStats';
-
 import HomeImage from '../../assets/img/background.jpg';
+
+
 const BackgroundImage = createGlobalStyle`
   body {
     background: url(${HomeImage}) repeat !important;
@@ -61,7 +62,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Home = () => {
+const Dashboard = () => {
   const classes = useStyles();
   const TVL = useTotalValueLocked();
   const bombFtmLpStats = useLpStatsBTC('BOMB-BTCB-LP');
@@ -181,8 +182,6 @@ const Home = () => {
 
   return (
     <Page>
-
-
 
       <Helmet>
         <title>{TITLE}</title>
@@ -552,12 +551,10 @@ const Home = () => {
 
         </div>
 
-
-
       </div>
 
     </Page>
   );
 };
 
-export default Home;
+export default Dashboard;
