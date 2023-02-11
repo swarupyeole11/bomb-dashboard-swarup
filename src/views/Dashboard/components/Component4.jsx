@@ -7,13 +7,18 @@ import DocumentImage from '../../../assets/img/documentImage.png'
 import DiscordLogo from '../../../assets/img/discordLogo.png'
 import UpArrowImage from '../../../assets/img/arrowUpCircle.png'
 import DownArrowImage from '../../../assets/img/arrowDownCircle.png'
+import Component3 from './Component3';
 
-const Test = () => {
-  return (
-    <>
-    <div className=' place-self-center mx-2'><DashBoardButton text="Claim Rewards" imageUrl={BombImage} /></div>
-    </>
-  )
+
+const Component4 = () =>{
+
+    return(
+        <>
+         
+
+        </>
+    )
+
 }
 
-export default Test
+export default Component4
