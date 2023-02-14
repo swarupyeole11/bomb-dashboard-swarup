@@ -9,11 +9,9 @@ export type Configuration = {
   deployments: Deployments;//this is a key value pair where the main key is deploymnets the subkeys are [address,abi]
   externalTokens: {[contractName: string]: [string, number]};
   config?: EthereumConfig;
-
   baseLaunchDate: Date;
   bondLaunchesAt: Date;
   boardroomLaunchesAt: Date;
-
   refreshInterval: number;
 };
 
@@ -34,3 +32,6 @@ export const defaultEthereumConfig = {
   defaultGasPrice: '7000000000000',
   ethereumNodeTimeout: 10000,
 };
+
+
+

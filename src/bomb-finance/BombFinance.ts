@@ -57,7 +57,7 @@ export class BombFinance {
     // loads contracts from deployments
     this.contracts = {};
     for (const [name, deployment] of Object.entries(deployments)) {
-      this.contracts[name] = new Contract(deployment.address, deployment.abi, provider);
+      this.contracts[name] = new Contract(deployment.address, deployment.abi, provider); //This code is for connectng the smart contract with 
     }
 
     //loads the external tokens
@@ -668,6 +668,8 @@ export class BombFinance {
     }
   }
 
+
+  //TODO : THis is the function for staking of things
   /**
    * Deposits token to given pool.
    * @param poolName A name of pool contract.

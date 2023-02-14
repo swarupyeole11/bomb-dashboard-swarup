@@ -62,7 +62,10 @@ const Home = () => {
   const bombStats = useBombStats();
   const bShareStats = usebShareStats();
   const tBondStats = useBondStats();
+
+  /*This code is for using the useBombFinance  */
   const bombFinance = useBombFinance();
+
   // const bombmaxi = useBombMaxiStats('0xd6f52e8ab206e59a1e13b3d6c5b7f31e90ef46ef000200000000000000000028');
 
   // console.log(bombmaxi);
